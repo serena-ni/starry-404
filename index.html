@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>404 — Lost in Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   sans-serif;
+      background: radial-gradient(circle at top, #0b1d3a, #02030a);
+      overflow: hidden;
+      color: #e6e9ff;
+    }
+
+    /* Star background */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image:
+        radial-gradient(1px 1px at 20% 30%, #fff, transparent),
+        radial-gradient(1px 1px at 70% 80%, #fff, transparent),
+        radial-gradient(1px 1px at 40% 60%, #fff, transparent),
+        radial-gradient(1px 1px at 90% 20%, #fff, transparent),
+        radial-gradient(1px 1px at 10% 90%, #fff, transparent);
+      animation: drift 60s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-200px);
+      }
+    }
+
+    /* Center content */
+    .container {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(5rem, 15vw, 9rem);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      opacity: 0.95;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      opacity: 0.9;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 420px;
+      line-height: 1.6;
+      opacity: 0.75;
+    }
+
+    /* Floating hint */
+    .hint {
+      position: absolute;
+      bottom: 2rem;
+      font-size: 0.85rem;
+      opacity: 0.5;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* Tiny interaction */
+    body:hover h1 {
+      text-shadow: 0 0 25px rgba(160, 180, 255, 0.5);
+      transition: text-shadow 0.4s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars"></div>
+
+  <main class="container">
+    <h1>404</h1>
+    <h2>page not found</h2>
+    <p>
+      you drifted a little too far into the void
+    </p>
+
+    <div class="hint">✦ nothing else exists here ✦</div>
+  </main>
+</body>
+</html>
